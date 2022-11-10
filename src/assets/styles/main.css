@@ -9,6 +9,13 @@
 =========================================================
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
+@font-face {
+  font-family: cairo;
+  src: url(../../assets/font/Cairo-VariableFont_wght.ttf);
+}
+
+
+
 body {
   padding: 0 0 30px 0;
   background-color: #fafafa;
@@ -17,7 +24,7 @@ body {
   font-size: 14px;
   line-height: 1.6;
   font-weight: 400;
-  font-family: open sans, Helvetica, Arial, sans-serif;
+  font-family: cairo, sans-serif;
 }
 .ant-layout.ant-layout-has-sider {
   flex-direction: row;
@@ -1739,6 +1746,7 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
 
 body {
   overflow: visible !important;
+  background-color: rgba(234, 240, 255, 0.69);
   width: 100% !important;
 }
 
@@ -1896,6 +1904,11 @@ body {
 .my-25 {
   margin-top: 25px;
 }
+
+.my-200 {
+  margin-top: 20%;
+}
+
 .text-center {
   text-align: center;
 }
@@ -3046,3 +3059,5 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile
   path {
   fill: #8c8c8c;
 }
+
+

@@ -19,26 +19,27 @@ function EChart() {
 
   const items = [
     {
-      Title: "3,6K",
-      user: "Users",
+      Title: "5",
+      user: "المتوقعة",
     },
     {
-      Title: "2m",
-      user: "Clicks",
+      Title: "4",
+      user: "الراسية",
     },
     {
-      Title: "$772",
-      user: "Sales",
+      Title: "7",
+      user: "المغادرة",
     },
     {
-      Title: "82",
-      user: "Items",
+      Title: "3",
+      user: "في الإنتظار",
     },
   ];
 
   return (
     <>
       <div id="chart">
+        <Title level={5}>حركة الحاويات</Title>
         <ReactApexChart
           className="bar-chart"
           options={eChart.options}
@@ -48,13 +49,12 @@ function EChart() {
         />
       </div>
       <div className="chart-vistior">
-        <Title level={5}>Active Users</Title>
-        <Paragraph className="lastweek">
+        <Title level={5}>حركة البواخر</Title>
+       {/* <Paragraph className="lastweek">
           than last week <span className="bnb2">+30%</span>
-        </Paragraph>
+        </Paragraph>*/}
         <Paragraph className="lastweek">
-          We have created multiple options for you to put together and customise
-          into pixel perfect pages.
+          الموقف اليومي لحركة البواخر بالموانئ السودانية
         </Paragraph>
         <Row gutter>
           {items.map((v, index) => (
