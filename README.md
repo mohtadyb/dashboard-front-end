@@ -30,7 +30,7 @@ React
 ## Demo
 
 - [Dashboard](https://demos.creative-tim.com/muse-ant-design-dashboard/#/dashboard?ref=readme-madd)
-- [Tables](https://demos.creative-tim.com/muse-ant-design-dashboard/#/tables?ref=readme-madd)
+- [Ports](https://demos.creative-tim.com/muse-ant-design-dashboard/#/tables?ref=readme-madd)
 - [Billing](https://demos.creative-tim.com/muse-ant-design-dashboard/#/billing?ref=readme-madd)
 - [RTL](https://demos.creative-tim.com/muse-ant-design-dashboard/#/rtl?ref=readme-madd)
 - [Profile](https://demos.creative-tim.com/muse-ant-design-dashboard/#/profile?ref=readme-madd)
@@ -78,7 +78,7 @@ Muse Ant Design Dashboard
     │   │   │   ├── Rtl.js
     │   │   │   ├── SignIn.js
     │   │   │   ├── SignUp.js
-    │   │   │   └── Tables.js
+    │   │   │   └── ports.js
     │   │   ├── App.js
     │   │   └── index.js
     │   ├── CHANGELOG.md

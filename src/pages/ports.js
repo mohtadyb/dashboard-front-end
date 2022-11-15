@@ -15,21 +15,17 @@ import {NavLink} from "react-router-dom";
 const { Title } = Typography;
 const icons = [container,watch,coming,out,coming,coming,coming]
 
-function Tables() {
+function Ports() {
 
   const [ports,setPort] = useState([])
 
   useEffect(() => {
-    console.log("useEffect method")
     getPorts()
-
   }, []);
 
   const getPorts = async () =>  {
     const response = await axios.get("http://localhost:4000/PORTS")
     setPort(response.data)
-
-    // console.log(ports)
   }
 
   return (
@@ -46,7 +42,7 @@ function Tables() {
                   xl={6}
                   className="mb-24"
               >
-              <NavLink to="/port_details">
+              <NavLink to={`/port_details/${item.ID}`}>
                   <Card bordered={false} className="criclebox ">
                       <div className="number">
                           <Row align="middle" gutter={[24, 0]}>
@@ -54,7 +50,8 @@ function Tables() {
                                   <Title level={4}>
                                       {item.NAME} <small className={"bnb2"}>{""}</small>
                                   </Title>
-                                  <span>{item.NAME}</span>
+                                  <span>{item.TYPE + '  /  '}</span>
+                                  <span>عدد المرابط {item.PORTS}</span>
                               </Col>
                               <Col xs={6}>
                                   <div className="icon-box"><img width={35} className="mb-23" src={icons[index]} alt="" /></div>
@@ -71,4 +68,4 @@ function Tables() {
   );
 }
 
-export default Tables;
+export default Ports;

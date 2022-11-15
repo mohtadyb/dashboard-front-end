@@ -1,4 +1,4 @@
-import {Button,Tag} from "antd";
+import {Tag} from "antd";
 
 function PortData(props) {
     return (
@@ -39,15 +39,23 @@ function PortData(props) {
                         <td>{item.DISCHARGE_SENTENCE}</td>
                         <td>{item.LEAVING_TIME}</td>
                         <td>{item.STATUS === 1?
-                            <Tag color="green" key={item.STATUS}>
-                                في الانتظار
+                            <Tag color="yellow" key={item.STATUS}>
+                                متوقعة
                             </Tag>:
-                            <Tag color="geekblue" key={item.STATUS}>
-                                تم الربط
-                            </Tag>}</td>
+                            item.STATUS === 2?
+                            <Tag color="orange" key={item.STATUS}>
+                                 في الانتظار
+                            </Tag>:
+                            item.STATUS === 3?
+                            <Tag color="blue" key={item.STATUS}>
+                                 تم الربط
+                            </Tag>:
+                            <Tag color="green" key={item.STATUS}>
+                                 غادرت
+                            </Tag>}
+                         </td>
                     </tr>
                 ))}
-
                 </tbody>
             </table>
         </>

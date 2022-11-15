@@ -88,11 +88,11 @@ function Sidenav({ color }) {
           </NavLink>
         </Menu.Item>
         <Menu.Item key="2">
-          <NavLink to="/tables">
+          <NavLink to="/ports">
             <span
               className="icon"
               style={{
-                background: page === "tables" ? color : "",
+                background: page === "ports" ? color : "",
               }}
             >
               {tables}

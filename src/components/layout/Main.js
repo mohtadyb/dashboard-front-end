@@ -54,24 +54,16 @@ function Main({children}) {
           <Affix>
             <AntHeader className={`${fixed ? "ant-header-fixed" : ""}`}>
               <Header
-                // onPress={openDrawer}
                 name={pathname === "dashboard"?"الرئيسية":"الموانئ"}
                 subName={pathname}
-                // handleSidenavColor={handleSidenavColor}
-                // handleSidenavType={handleSidenavType}
-                // handleFixedNavbar={handleFixedNavbar}
               />
             </AntHeader>
           </Affix>
         ) : (
           <AntHeader className={`${fixed ? "ant-header-fixed" : ""}`}>
             <Header
-              // onPress={openDrawer}
               name={pathname === "dashboard"?"الرئيسية":"الموانئ"}
               subName={pathname === "dashboard"?"الرئيسية":"الموانئ"}
-              // handleSidenavColor={handleSidenavColor}
-              // handleSidenavType={handleSidenavType}
-              // handleFixedNavbar={handleFixedNavbar}
             />
           </AntHeader>
         )}
