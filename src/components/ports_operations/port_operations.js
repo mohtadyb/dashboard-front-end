@@ -11,9 +11,9 @@ function PortData(props) {
                     <th>الوكيل الملاحي</th>
                     <th>الخط الملاحي</th>
 
-                    <th>رقم المربط</th>
+                    <th hidden={props.tabe === 1?true:false}>رقم المربط</th>
                     <th>وقت الظهور</th>
-                    <th>وقت الربط</th>
+                    <th hidden={props.tabe === 1?true:false}>وقت الربط</th>
                     <th>البضاعة الواردة/طن</th>
 
                     <th>البضاعة الصادرة/طن</th>
@@ -30,9 +30,9 @@ function PortData(props) {
                         <td>{item.SHIPPING_AGENT}</td>
                         <td>{item.SHIPPING_LINE}</td>
 
-                        <td>{item.PORT_NO}</td>
+                        <td hidden={props.tabe === 1?true:false}>{item.PORT_NO}</td>
                         <td>{item.SHOW_TIME}</td>
-                        <td>{item.PORTING_TIME}</td>
+                        <td hidden={props.tabe === 1?true:false}>{item.PORTING_TIME}</td>
                         <td>{item.QUANTITY_IMPORT_CARGO}</td>
 
                         <td>{item.QUANTITY_EXPORT_CARGO}</td>

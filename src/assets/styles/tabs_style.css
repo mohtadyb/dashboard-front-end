@@ -1,5 +1,9 @@
 
 
+.title{
+  font-size: 22px;
+  font-weight: bold;
+}
 .tabs {
   direction: ltr;
   left: 50%;

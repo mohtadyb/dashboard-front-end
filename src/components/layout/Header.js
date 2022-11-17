@@ -34,7 +34,7 @@ function Header({
               className="ant-page-header-heading-title"
               style={{ textTransform: "capitalize" }}
             >
-              {subName.replace("/", "")}
+              {subName}
             </span>
           </div>
         </Col>

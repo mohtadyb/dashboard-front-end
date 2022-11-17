@@ -76,7 +76,7 @@ function PortDetails() {
     return (
         <>
              <div className="layout-content">
-                <Row className="rowgap-vbox" gutter={[24, 0]}>
+                 <Row className="rowgap-vbox" gutter={[24, 0]}>
                     {count.map((c, index) => (
                         <Col
                             key={index}
@@ -106,9 +106,7 @@ function PortDetails() {
                         </Col>
                     ))}
                 </Row>
-
                  <div className="tabs">
-
                      <input type="radio" value={3} onChange={handleChange} id="tab1"  name="tab-control"/>
                      <input type="radio" value={2} onChange={handleChange} id="tab2" name="tab-control"/>
                      <input type="radio" value={1} onChange={handleChange} id="tab3" name="tab-control"/>
@@ -124,10 +122,9 @@ function PortDetails() {
                          <div className="indicator"></div>
                      </div>
                      <div className="content">
-                         <PortData operations={filterOperations(tabSelect)}/>
+                         <PortData tabe={tabSelect} operations={filterOperations(tabSelect)}/>
                      </div>
                  </div>
-
              </div>
         </>
     );

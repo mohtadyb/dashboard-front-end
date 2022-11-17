@@ -5,17 +5,24 @@ import {
   Typography,
 } from "antd";
 import out from "../assets/images/custom/dashboard_icon/log-out.png";
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import axios from "axios";
 import container from "../assets/images/custom/dashboard_icon/container.png";
 import watch from "../assets/images/custom/dashboard_icon/stopwatch.png";
 import coming from "../assets/images/custom/dashboard_icon/question.png";
 import {NavLink} from "react-router-dom";
+import {PortContext} from "../App";
+
+import { Canvas } from "@react-three/fiber";
+import { Suspense } from "react";
+import {Model} from "../components/model/model";
+// import {OrbitControls} from "@react-three/drei";
 
 const { Title } = Typography;
 const icons = [container,watch,coming,out,coming,coming,coming]
 
 function Ports() {
+    const port =  useContext(PortContext)
 
   const [ports,setPort] = useState([])
 
@@ -30,7 +37,16 @@ function Ports() {
 
   return (
     <>
-      <div className="tabled my-200">
+        <Canvas>
+            <Suspense fallback={null}>
+                <Model />
+                {/*<OrbitControls />*/}
+                <ambientLight intensity={0.5}/>
+                <directionalLight position={[-2,5,2]} intensity={1}/>
+                {/*<Environment preset="sunset" background />*/}
+            </Suspense>
+        </Canvas>
+        <div className="tabled my-200">
        <Row className="rowgap-vbox" gutter={[24, 0]}>
            { ports.map((item, index) => (
               <Col
@@ -42,7 +58,7 @@ function Ports() {
                   xl={6}
                   className="mb-24"
               >
-              <NavLink to={`/port_details/${item.ID}`}>
+              <NavLink to={`/port_details/${item.ID}/${item.NAME}`} onClick={()=> {port.name = item.NAME}}>
                   <Card bordered={false} className="criclebox ">
                       <div className="number">
                           <Row align="middle" gutter={[24, 0]}>

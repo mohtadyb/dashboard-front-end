@@ -15,10 +15,13 @@ import { Menu } from "antd";
 import { NavLink, useLocation } from "react-router-dom";
 import logo from "../../assets/images/spc_logo.png";
 import qr_code from "../../assets/images/custom/qr-code.png";
+import {useContext} from "react";
+import {PortContext} from "../../App";
 
 function Sidenav({ color }) {
   const { pathname } = useLocation();
   const page = pathname.replace("/", "");
+  const port =  useContext(PortContext)
 
   const dashboard = [
     <svg
@@ -75,7 +78,7 @@ function Sidenav({ color }) {
       <hr />
       <Menu theme="light" mode="inline">
         <Menu.Item key="1">
-          <NavLink to="/dashboard">
+          <NavLink to="/dashboard" onClick={()=>{port.name = ""}}>
             <span
               className="icon"
               style={{
@@ -88,7 +91,7 @@ function Sidenav({ color }) {
           </NavLink>
         </Menu.Item>
         <Menu.Item key="2">
-          <NavLink to="/ports">
+          <NavLink to="/ports" onClick={()=>{port.name = ""}} >
             <span
               className="icon"
               style={{

@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useState, useEffect , useContext} from "react";
 import { Layout, Affix } from "antd";
 import Sidenav from "./Sidenav";
 import Header from "./Header";
 import Footer from "./Footer";
-
+import {useLocation} from "react-router-dom"
+import {PortContext} from "../../App";
 const { Header: AntHeader, Content, Sider } = Layout;
 
 function Main({children}) {
@@ -13,6 +13,7 @@ function Main({children}) {
   const [sidenavType, setSidenavType] = useState("transparent");
   const [fixed, setFixed] = useState(false);
 
+  const port =  useContext(PortContext)
 
   let { pathname } = useLocation();
   pathname = pathname.replace("/", "");
@@ -28,9 +29,7 @@ function Main({children}) {
 
   return (
     <Layout
-      className={`layout-dashboard ${
-        pathname === "profile" ? "layout-profile" : ""
-      } ${pathname === "rtl" ? "layout-dashboard-rtl" : "layout-dashboard-rtl"}`}
+      className={`layout-dashboard layout-dashboard-rtl`}
     >
 
       <Sider
@@ -63,7 +62,7 @@ function Main({children}) {
           <AntHeader className={`${fixed ? "ant-header-fixed" : ""}`}>
             <Header
               name={pathname === "dashboard"?"الرئيسية":"الموانئ"}
-              subName={pathname === "dashboard"?"الرئيسية":"الموانئ"}
+              subName={port.name}
             />
           </AntHeader>
         )}
