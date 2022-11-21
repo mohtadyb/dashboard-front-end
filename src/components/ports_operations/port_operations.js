@@ -24,33 +24,33 @@ function PortData(props) {
                 </thead>
                 <tbody>
                 { props.operations.map((item, index) => (
-                    <tr key={item.ID}>
-                        <td>{item.PORT_NAME}</td>
-                        <td>{item.SHIP_NAME}</td>
-                        <td>{item.SHIPPING_AGENT}</td>
-                        <td>{item.SHIPPING_LINE}</td>
+                    <tr key={item.id}>
+                        <td>{item.port_name}</td>
+                        <td>{item.ship_name}</td>
+                        <td>{item.agent_name}</td>
+                        <td>{item.shipping_line}</td>
 
-                        <td hidden={props.tabe === 1?true:false}>{item.PORT_NO}</td>
-                        <td>{item.SHOW_TIME}</td>
-                        <td hidden={props.tabe === 1?true:false}>{item.PORTING_TIME}</td>
-                        <td>{item.QUANTITY_IMPORT_CARGO}</td>
+                        <td hidden={props.tabe === 1?true:false}>{item.port_no}</td>
+                        <td>{item.show_time}</td>
+                        <td hidden={props.tabe === 1?true:false}>{item.porting_time}</td>
+                        <td>{item.quantity_export_cargo}</td>
 
-                        <td>{item.QUANTITY_EXPORT_CARGO}</td>
-                        <td>{item.DISCHARGE_SENTENCE}</td>
-                        <td>{item.LEAVING_TIME}</td>
-                        <td>{item.STATUS === 1?
-                            <Tag color="yellow" key={item.STATUS}>
+                        <td>{item.quantity_import_cargo}</td>
+                        <td>{item.discharge_sentence}</td>
+                        <td>{item.leaving_time}</td>
+                        <td>{item.status === 1?
+                            <Tag color="yellow" key={item.status}>
                                 متوقعة
                             </Tag>:
-                            item.STATUS === 2?
-                            <Tag color="orange" key={item.STATUS}>
+                            item.status === 2?
+                            <Tag color="orange" key={item.status}>
                                  في الانتظار
                             </Tag>:
-                            item.STATUS === 3?
-                            <Tag color="blue" key={item.STATUS}>
+                            item.status === 3?
+                            <Tag color="blue" key={item.status}>
                                  تم الربط
                             </Tag>:
-                            <Tag color="green" key={item.STATUS}>
+                            <Tag color="green" key={item.status}>
                                  غادرت
                             </Tag>}
                          </td>

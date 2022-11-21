@@ -2,11 +2,12 @@ import {useEffect, useState} from "react";
 import {Card, Col, Row} from "antd";
 import {useParams} from "react-router-dom"
 import axios from "axios";
-import operationsSqlQuery from "../sql_queries/sqls";
+import {operationsSqlQuery} from "../sql_queries/sqls";
 import Title from "antd/es/typography/Title";
 import ship_cargo from "../assets/images/custom/dashboard_icon/cargo-ship.png"
 import "../assets/styles/tabs_style.css";
 import PortData from "../components/ports_operations/port_operations";
+import { url } from "../data/const";
 
 function PortDetails() {
 
@@ -21,7 +22,8 @@ function PortDetails() {
 
     const getOperations = async () => {
         setOperations([])
-        const response = await axios.post("http://localhost:4000/operations",{"query":operationsSqlQuery(portId)})
+        const response = await axios.post(`${url}query/`,{"query":operationsSqlQuery(portId)})
+                  console.log(response.data)
         setOperations(response.data)
     }
 
@@ -33,13 +35,13 @@ function PortDetails() {
 
     function countShipShow(status){
         return operations.filter((item)=> {
-            return  item.STATUS === status
+            return  +item.status === status
         }).length
     }
 
     function filterOperations(status){
         return operations.filter((item)=> {
-            return  item.STATUS === status
+            return  +item.status === status
         })
     }
 
